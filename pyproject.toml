@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cheon-reranker"
+dynamic = ["version"]
+description = "Cheon Reranker (체온 리랭커): reranking for search and RAG, with a cookbook of runnable recipes."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "CC-BY-NC-4.0"
+license-files = ["LICENSE"]
+authors = [{ name = "CHEON:AI", email = "hello@cheon.ai.kr" }]
+keywords = ["reranker", "reranking", "rag", "information-retrieval", "cookbook"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Indexing",
+]
+dependencies = [
+    "torch>=2.1",
+    "transformers>=4.56",
+]
+
+[project.optional-dependencies]
+bm25 = ["kiwipiepy>=0.20", "rank-bm25>=0.2.2", "numpy"]
+cookbook = ["cheon-reranker[bm25]", "datasets>=3.0"]
+dev = ["cheon-reranker[cookbook]", "pytest>=8", "ruff>=0.6"]
+
+[project.urls]
+Homepage = "https://cheon.ai.kr"
+Model = "https://huggingface.co/cheonai/cheon-reranker-0.6b-v1"
+Write-up = "https://cheon.ai.kr/blog/autorag-reranker-ndcg-mrr"
+Repository = "https://github.com/cheon-ai-official/cheon-reranker"
+
+[tool.hatch.version]
+path = "src/cheon_reranker/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cheon_reranker"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["cheon_reranker"]
