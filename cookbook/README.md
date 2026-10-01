@@ -21,7 +21,7 @@ dataset.
 list of candidates, then put the reranker behind BM25 the way a RAG pipeline
 does.
 
-The write-up [BM25가 8위에 둔 정답을 1위로 올린 체온 리랭커](https://cheon.ai.kr/blog/autorag-reranker-ndcg-mrr) (Korean) walks through the two-stage example.
+The write-up [BM25 뒤에 체온 리랭커 붙이기: AutoRAG 실전 가이드](https://cheon.ai.kr/blog/autorag-reranker-ndcg-mrr) (Korean) walks through the two-stage example.
 
 | Folder | Recipe | What it shows |
 | --- | --- | --- |
