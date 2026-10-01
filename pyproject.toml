@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling>=1.27"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "cheon-reranker"
@@ -36,11 +36,13 @@ Model = "https://huggingface.co/cheonai/cheon-reranker-0.6b-v1"
 Write-up = "https://cheon.ai.kr/blog/autorag-reranker-ndcg-mrr"
 Repository = "https://github.com/cheon-ai-official/cheon-reranker"
 
-[tool.hatch.version]
-path = "src/cheon_reranker/__init__.py"
+# The modules sit directly in src/; installed, they are the cheon_reranker package.
+[tool.setuptools]
+package-dir = { cheon_reranker = "src" }
+packages = ["cheon_reranker"]
 
-[tool.hatch.build.targets.wheel]
-packages = ["src/cheon_reranker"]
+[tool.setuptools.dynamic]
+version = { attr = "cheon_reranker.__version__" }
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
