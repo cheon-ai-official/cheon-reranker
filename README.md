@@ -84,7 +84,7 @@ The two-stage recipe runs BM25 over Kiwi morphemes on the public
 reranks the top ten. On its question about the live-commerce service with the
 highest usage, BM25 ranks the labelled answer eighth, below a solution brochure
 that shares many of the question's words; the reranker puts the answer first.
-The write-up walks through it: [BM25가 8위에 둔 정답을 체온 리랭커는 1위로 올렸어요](https://cheon.ai.kr/blog/autorag-reranker-ndcg-mrr) (Korean).
+The write-up walks through it: [BM25가 8위에 둔 정답을 1위로 올린 체온 리랭커](https://cheon.ai.kr/blog/autorag-reranker-ndcg-mrr) (Korean).
 
 ## Things to know
 
