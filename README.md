@@ -15,7 +15,7 @@ browser on the [playground](https://cheon.ai.kr/reranker#playground).
 ## Benchmarks
 
 nDCG@10 on AutoRAGRetrieval from MTEB(kor): 114 questions over finance,
-public-sector, healthcare, legal and commerce documents. Every model was run
+public-sector, legal and commerce documents. Every model was run
 from its public checkpoint under the same evaluation harness, and a score is
 reported only if it reproduces the model's official number within ±0.003 where
 one exists.
